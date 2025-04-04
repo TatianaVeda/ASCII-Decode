@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Decoder/Encoder</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+     <header>
+        <h1>ASCII Art Decoder/Encoder</h1>
+     </header>
+    <div class="main-container">
+       <div class="gif-container">
+            <img src="/static/girl.gif" alt="girl GIF">
+       
+      <div class="status">
+        {{if .Error}}
+            <p class="error">{{.Error}}</p>
+        {{else}}
+            <p class="success">HTTP Status: {{.HttpStatus}}</p>
+        {{end}}         
+      </div>
+</div>
+      <div class="container">
+           <form method="post" action="/decoder">
+           <textarea name ="input" rows="25" cols="80" placeholder="Hi! Welcome to the ART DECODER/ENCODER Web tool! To encode or decode just enter your art or strings in this area and click appropriated button to see the result. Enjoy!">{{.Input}}</textarea>
+           <div class="buttons">
+                <button type="submit" name="action" value="decode">Decode</button>
+                <button type="submit" name="action" value="encode">Encode</button>
+           </div>
+          <h2>Result</h2>
+             <textarea readonly name="result" rows="25" cols="80" placeholder="Result will appear here...">{{.Result}}</textarea>
+          </form>          
+      </div>
+    </div> 
+</body>
+</html>
