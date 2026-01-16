@@ -8,7 +8,7 @@ This project provides a web interface for encoding ASCII art or decoding strings
 1. You need to have Go installed.
 Clone the repository + update settings:
  ```
-   git clone https://gitea.koodsisu.fi/tanjav/art
+   git clone https://[repo link]
    
    go mod tidy
    ```
